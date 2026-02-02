@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Products | Product Management</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Product Management</h1>
+      <a href="report.html" class="link-btn">View Report</a>
+    </header>
+
+    <main class="container">
+      <div class="card">
+        <h2 class="card-title">Add Product</h2>
+
+        <form class="form grid-form add-product-form">
+          <input
+            id="product-name"
+            type="text"
+            placeholder="Product Name"
+            class="input"
+          />
+          <input id="price" type="number" placeholder="Price" class="input" />
+          <input
+            id="quantity"
+            type="number"
+            placeholder="Quantity"
+            class="input"
+          />
+          <input
+            id="category"
+            type="text"
+            placeholder="Category"
+            class="input"
+          />
+          <button class="btn primary-btn">Add Product</button>
+        </form>
+      </div>
+<!-- Edit Product Modal -->
+<div class="modal" id="editModal">
+  <div class="modal-content">
+    <h2>Edit Product</h2>
+
+    <input type="hidden" id="editId" />
+
+    <input type="text" id="editName" placeholder="Product Name" />
+    <input type="number" id="editPrice" placeholder="Price" />
+    <input type="number" id="editQuantity" placeholder="Quantity" />
+    <input type="text" id="editCategory" placeholder="Category" />
+
+    <div class="modal-actions">
+      <button class="btn btn-primary" onclick="updateProduct()">Update</button>
+      <button class="btn btn-danger" onclick="closeModal()">Cancel</button>
+    </div>
+  </div>
+</div>
+
+      <div class="card">
+        <h2 class="card-title">Product List</h2>
+
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Qty</th>
+              <th>Category</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sample Product</td>
+              <td>₹500</td>
+              <td>10</td>
+              <td>Electronics</td>
+              <td>
+                <button class="btn small-btn">Edit</button>
+                <button class="btn danger-btn small-btn">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <script src="./js/products.js"></script>
+    </main>
+  </body>
+</html>
